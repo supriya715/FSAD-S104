@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home - Series & Parallel Circuits</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="header-inner container">
+      <div class="logo">Home</div>
+      <nav class="desktop-nav">
+
+        <a href="main.html" class="active">Home</a>
+        <a href="description.html">Description</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="simulation.html">Simulation</a>
+      </nav>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="material-icons">menu</span>
+      </button>
+    </div>
+    <nav class="mobile-nav container" id="mobile-menu">
+      <a href="index.html">Home</a>
+  
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="quiz.html" class="active">Quiz</a>
+      <a href="simulation.html">Simulation</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="main-panel">
+      <div class="text-content">
+        <h1 class="title"> Current Flow In Series and Parallel Circuits</h1>
+        <p class="subtitle">Explore the world of electricity through hands-on knowledge of circuit types.</p>
+        <p class="subtitle" style="margin-top: -16px;">Improve your understanding of how electrons flow and power systems operate.</p>
+        <button class="btn-started" onclick="showMoreInfo()">Get Started</button>
+
+        <!-- Hidden content that will show when button is clicked -->
+        <div id="more-info" style="display: none; margin-top: 20px;">
+          <h3>Deep Dive into Circuit Types</h3>
+          <p>
+            <strong>Series Circuits:</strong> In a series circuit, components are connected end-to-end in a single path.
+            The current remains the same through all components. However, if one component fails, the entire circuit stops functioning.
+          </p>
+          <p>
+            <strong>Parallel Circuits:</strong> In a parallel circuit, components are connected across the same voltage points.
+            Each component operates independently. If one branch fails, others continue to work. Voltage is the same across all paths,
+            while current divides among the branches.
+          </p>
+        </div>
+      </div>
+      <div class="image-content">
+        <img src="https://thumbs.dreamstime.com/z/parallel-circuit-series-basic-electric-circuits-experiment-batter-light-bulb-electrical-vector-kirchhoff-voltage-law-271538896.jpg" alt="Bulb illustration" />
+      </div>
+    </section>
+
+    <section class="info-panel">
+      <h2>What Are Series and Parallel Circuits?</h2>
+      <p>
+        Electrical circuits can be configured in two main ways: <strong>series</strong> and <strong>parallel</strong>.
+        Each has unique characteristics in how electricity flows and how components respond.
+      </p>
+      <ul>
+        <li><strong>Series Circuits</strong> connect components end-to-end, forming a single path for current. If one component fails, the entire circuit stops working.</li>
+        <li><strong>Parallel Circuits</strong> connect components across the same voltage points. Each has its own path, so if one fails, others can still operate.</li>
+      </ul>
+    </section>
+
+    <section class="cta-panel">
+      <h2>Why Learn This?</h2>
+      <p>
+        Understanding circuit types is fundamental in electronics, physics, and electrical engineering. Whether you’re a student, hobbyist, or professional,
+        mastering this knowledge helps you build and troubleshoot real-world systems.
+      </p>
+<a href="description.html" class="btn-started" style="margin-top: 12px;">Continue</a>
+    </section>
+  </main>
+<footer class="container" style="text-align: center; margin-top: 40px; padding: 20px 0; color: #888;">
+    &copy; 2025 Series & Parallel Circuits. All rights reserved.
+  </footer>
+
+  <!-- Script for button behavior -->
+  <script>
+    function showMoreInfo() {
+      const info = document.getElementById("more-info");
+      info.style.display = "block";
+      info.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

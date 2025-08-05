@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team 12 - Savitribai Phule</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Times New Roman', serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: url('https://indiacsr.in/wp-content/uploads/2024/01/Savitribai-Phule-indiacsr.webp');
+      background-size: cover;
+      background-position: center;
+      filter: blur(8px) brightness(0.6);
+      z-index: -1;
+    }
+
+    .content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 6px black;
+    }
+
+    .team-names {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 4px black;
+    }
+
+    .team-names span {
+      white-space: nowrap;
+    }
+
+    .continue-btn {
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .continue-btn:hover {
+      background-color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>TEAM 12 : SAVITRIBAI PHULE</h1>
+    <div class="team-names">
+      <span>Gayatri</span>
+      <span>Jahnavi</span>
+      <span>Supriya</span>
+      <span>Sanjana</span>
+      <span>Satwika</span>
+    </div>
+    <a href="main.html" class="continue-btn">Continue</a>
+  </div>
+</body>
+</html>

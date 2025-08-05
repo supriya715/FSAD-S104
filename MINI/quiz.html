@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz - Series & Parallel Circuits</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .correct {
+      background-color: #c8f7c5; /* light green */
+      border-left: 5px solid green;
+      padding-left: 6px;
+    }
+    .wrong {
+      background-color: #f7c5c5; /* light red */
+      border-left: 5px solid red;
+      padding-left: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner container">
+      <div class="logo"> Play Quiz</div>
+      <nav class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="description.html">Description</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="quiz.html" class="active">Quiz</a>
+        <a href="simulation.html">Simulation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="quiz-section">
+      <h1>Quiz: Test Your Knowledge</h1>
+      <form id="quizForm">
+        <div class="question-block" data-answer="b">
+          <p><strong>1. What happens in a series circuit if one component fails?</strong></p>
+          <label><input type="radio" name="q1" value="a" /> a) Nothing happens</label><br>
+          <label><input type="radio" name="q1" value="b" /> b) All components stop working</label><br>
+          <label><input type="radio" name="q1" value="c" /> c) Only the faulty component stops</label><br>
+          <label><input type="radio" name="q1" value="d" /> d) Current increases</label>
+        </div><br>
+
+        <div class="question-block" data-answer="a">
+          <p><strong>2. In which type of circuit is the voltage same across all components?</strong></p>
+          <label><input type="radio" name="q2" value="a" /> a) Parallel Circuit</label><br>
+          <label><input type="radio" name="q2" value="b" /> b) Series Circuit</label><br>
+          <label><input type="radio" name="q2" value="c" /> c) Both</label><br>
+          <label><input type="radio" name="q2" value="d" /> d) None</label>
+        </div><br>
+
+        <div class="question-block" data-answer="c">
+          <p><strong>3. What is the main disadvantage of a series circuit?</strong></p>
+          <label><input type="radio" name="q3" value="a" /> a) Complex wiring</label><br>
+          <label><input type="radio" name="q3" value="b" /> b) Bulbs glow dimmer</label><br>
+          <label><input type="radio" name="q3" value="c" /> c) All components must work or the circuit fails</label><br>
+          <label><input type="radio" name="q3" value="d" /> d) Voltage is higher</label>
+        </div><br>
+
+        <div class="question-block" data-answer="c">
+          <p><strong>4. Which of the following is an application of parallel circuits?</strong></p>
+          <label><input type="radio" name="q4" value="a" /> a) Christmas lights</label><br>
+          <label><input type="radio" name="q4" value="b" /> b) Torch lights</label><br>
+          <label><input type="radio" name="q4" value="c" /> c) Home wiring systems</label><br>
+          <label><input type="radio" name="q4" value="d" /> d) Battery chargers only</label>
+        </div><br>
+
+        <div class="question-block" data-answer="b">
+          <p><strong>5. In a parallel circuit, what happens to the total current?</strong></p>
+          <label><input type="radio" name="q5" value="a" /> a) It is the same in all branches</label><br>
+          <label><input type="radio" name="q5" value="b" /> b) It is divided across branches</label><br>
+          <label><input type="radio" name="q5" value="c" /> c) It becomes zero</label><br>
+          <label><input type="radio" name="q5" value="d" /> d) It keeps increasing</label>
+        </div><br>
+
+        <button type="submit">Submit</button>
+      </form>
+      <p id="result"></p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      let score = 0;
+      const total = document.querySelectorAll(".question-block").length;
+
+      document.querySelectorAll(".question-block").forEach(block => {
+        const correctAnswer = block.dataset.answer;
+        const selected = block.querySelector("input:checked");
+        const labels = block.querySelectorAll("label");
+
+        labels.forEach(label => {
+          label.classList.remove("correct", "wrong");
+        });
+
+        if (selected) {
+          if (selected.value === correctAnswer) {
+            score++;
+            selected.parentElement.classList.add("correct");
+          } else {
+            selected.parentElement.classList.add("wrong");
+            block.querySelector(`input[value='${correctAnswer}']`).parentElement.classList.add("correct");
+          }
+        } else {
+          block.querySelector(`input[value='${correctAnswer}']`).parentElement.classList.add("correct");
+        }
+      });
+
+      document.getElementById("result").textContent = `You scored ${score} out of ${total}`;
+    });
+  </script>
+
+  <footer class="container footer">
+    <p>&copy; 2025 Series Circuits | All Rights Reserved</p>
+  </footer>
+</body>
+</html>

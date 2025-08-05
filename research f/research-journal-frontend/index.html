@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Journal Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Research Journal Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="#submit"><i class="fas fa-upload"></i> Submit Paper</a></li>
+                <li><a href="#review"><i class="fas fa-search"></i> Review Papers</a></li>
+                <li><a href="#publish"><i class="fas fa-book"></i> Published Papers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="submit">
+        <h2>Submit Your Research Paper</h2>
+        <form id="submissionForm">
+            <label for="title">Paper Title:</label>
+            <input type="text" id="title" name="title" required>
+
+
+            <label for="abstract">Abstract:</label>
+            <textarea id="abstract" name="abstract" rows="4" required></textarea>
+
+            <label for="file">Upload Paper (PDF only):</label>
+            <input type="file" id="file" name="file" accept=".pdf" required>
+
+            <button type="submit">Submit</button>
+            check here for information<button type="Back">Back</button>
+            <button type="Help">Help</button>
+        </form>
+    </section>
+
+    <section id="review">
+        <h2>Review Papers</h2>
+        <div id="reviewList">
+            <!-- Dynamically populated with papers to review -->
+        </div>
+    </section>
+
+    <section id="publish">
+       <h2>Published Papers</h2>
+        <div id="publishedList">
+            <!-- Dynamically populated with published papers -->
+        </div>
+    </section>
+
+    <footer>
+        <p></p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
